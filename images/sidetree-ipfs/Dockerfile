@@ -20,6 +20,8 @@ WORKDIR $GOPATH/src/github.com/trustbloc/sidetree-ipfs
 ENV EXECUTABLES go git
 
 FROM golang as sidetree-ipfs
+LABEL org.opencontainers.image.source https://github.com/trustbloc/sidetree-ipfs
+
 ARG GO_TAGS
 ARG GOPROXY
 RUN GO_TAGS=${GO_TAGS} GOPROXY=${GOPROXY} make sidetree-ipfs

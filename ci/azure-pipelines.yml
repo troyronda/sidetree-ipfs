@@ -44,9 +44,9 @@ jobs:
           }
           trap logout EXIT
           source ci/version_var.sh
-          echo $DOCKER_PASSWORD | docker login docker.pkg.github.com --username $DOCKER_USER --password-stdin
+          echo $DOCKER_PASSWORD | docker login ghcr.io --username $DOCKER_USER --password-stdin
           make sidetree-ipfs-docker
-          docker tag trustbloc/sidetree-ipfs:latest ${SIDETREE_IPFS_PKG}:${SIDETREE_IPFS_TAG}
+          docker tag ghcr.io/trustbloc/sidetree-ipfs:latest ${SIDETREE_IPFS_PKG}:${SIDETREE_IPFS_TAG}
           docker push ${SIDETREE_IPFS_PKG}:${SIDETREE_IPFS_TAG}
         env:
           DOCKER_USER: $(DOCKER_USER)

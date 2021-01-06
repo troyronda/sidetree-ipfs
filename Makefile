@@ -22,8 +22,8 @@ ARCH               = $(shell go env GOARCH)
 GO_VER             = 1.13.4
 
 # Namespace for the sidetree ipfs node
-DOCKER_OUTPUT_NS          ?= trustbloc
-SIDETREE_IPFS_IMAGE_NAME  ?= sidetree-ipfs
+DOCKER_OUTPUT_NS          ?= ghcr.io
+SIDETREE_IPFS_IMAGE_NAME  ?= trustbloc/sidetree-ipfs
 
 
 # Tool commands (overridable)
